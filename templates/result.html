@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="https://img.icons8.com/?size=100&id=95473&format=png&color=000000" type="image/x-icon">
+
+</head>
+
+<body
+    class="{% if prediction == 1 %} bg-red-600 {% else %} bg-green-600 {% endif %} flex items-center justify-center h-screen transition-all duration-500">
+
+    <div class="bg-white shadow-lg rounded-lg p-8 text-center max-w-md">
+        {% if prediction == 1 %}
+        <div class="text-red-600 text-6xl animate-pulse">⚠️</div>
+        <h1 class="text-3xl font-bold text-red-700 mt-4">High Risk of Heart Disease</h1>
+        <p class="text-gray-600 mt-2">Please consult a doctor for further evaluation.</p>
+        {% else %}
+        <div class="text-green-600 text-6xl">✅</div>
+        <h1 class="text-3xl font-bold text-green-700 mt-4">Low Risk of Heart Disease</h1>
+        <p class="text-gray-600 mt-2">Keep maintaining a healthy lifestyle! 👍</p>
+        {% endif %}
+
+        <a href="/"
+            class="mt-6 inline-block bg-white text-gray-800 px-6 py-2 rounded-lg hover:bg-gray-200 transition duration-300 shadow-lg">
+            🔙 Go Back
+        </a>
+    </div>
+
+</body>
+
+</html>
